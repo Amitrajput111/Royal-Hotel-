@@ -13,7 +13,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      className="relative w-full min-h-[85dvh] md:min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden pt-20"
       aria-label="Hero — The Royal Hotel"
     >
       {/* Background */}

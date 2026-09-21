@@ -96,7 +96,7 @@ export default function Location() {
           <RevealBlock className="w-full h-full">
             <div className="flex flex-col gap-6 h-full">
               {/* Map */}
-              <div className="relative rounded overflow-hidden shadow-lg w-full bg-[#ede7dc] flex-grow min-h-[350px]">
+              <div className="relative rounded-lg overflow-hidden shadow-lg w-full bg-[#ede7dc] flex-grow min-h-[250px] md:min-h-[350px]">
                 <iframe
                   src={HOTEL.mapEmbed}
                   title="The Royal Hotel — Location Map"
