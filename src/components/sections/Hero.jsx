@@ -49,9 +49,11 @@ export default function Hero() {
           className="font-serif font-light text-white leading-[1.08]"
           style={{ fontSize: 'clamp(2.6rem, 6.5vw, 5.2rem)' }}
         >
-          A Royal Escape.
+          Experience{' '}
           <br />
-          <em className="text-[#c9a84c] not-italic">An Unforgettable Stay.</em>
+          <span className="font-serif italic bg-gradient-to-r from-[#c9a84c] via-[#f8f4ee] to-[#c9a84c] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
+            True Luxury
+          </span>
         </motion.h1>
 
         {/* Gold divider */}

@@ -6,17 +6,17 @@ import SectionHeading from '../ui/SectionHeading';
 const TESTIMONIALS = [
   {
     id: 1,
-    name: 'Priya Sharma',
+    name: 'Vikram Singh',
     role: 'Mumbai',
     text: 'An absolutely unforgettable stay. The attention to detail was extraordinary — from the rose petal welcome to the personalised pillow menu. The Royal Suite truly felt like royalty.',
-    avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=80&q=80&fit=crop&crop=face',
+    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&q=80&fit=crop&crop=face',
   },
   {
     id: 2,
-    name: 'Rajiv & Meena Kapoor',
+    name: 'Rajiv Kapoor',
     role: 'Bengaluru',
     text: 'We celebrated our anniversary at The Royal Hotel and it exceeded every expectation. The spa ritual, the candlelight dinner — our hosts thought of everything. We will be back.',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80&fit=crop&crop=face',
+    avatar: 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=80&q=80&fit=crop&crop=face',
   },
   {
     id: 3,
@@ -27,10 +27,10 @@ const TESTIMONIALS = [
   },
   {
     id: 4,
-    name: 'Sunita Menon',
+    name: 'Suresh Menon',
     role: 'Chennai',
     text: "Durbar Restaurant alone is worth the trip — I've dined at many five-star hotels and rarely do I find food this soulful and beautifully presented. Remarkable service, always.",
-    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80&fit=crop&crop=face',
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&q=80&fit=crop&crop=face',
   },
 ];
 

@@ -18,6 +18,8 @@ const Button = React.forwardRef(function Button(
   const base =
     'inline-flex items-center justify-center gap-2 font-sans font-medium tracking-wide transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c9a84c] select-none cursor-pointer';
 
+  const baseStyle = 'inline-flex items-center justify-center font-sans tracking-wide transition-all duration-300 relative overflow-hidden focus:outline-none';
+
   const sizes = {
     sm: 'px-5 py-2 text-sm',
     md: 'px-7 py-3 text-sm',
@@ -26,7 +28,7 @@ const Button = React.forwardRef(function Button(
 
   const variants = {
     primary:
-      'bg-[#c9a84c] text-[#0f241c] hover:bg-[#e0c070] active:bg-[#a07830] shadow-sm hover:shadow-md',
+      'bg-[#c9a84c] text-[#0f241c] hover:bg-[#e0c070] active:bg-[#a07830] shadow-sm hover:shadow-lg btn-primary-glow',
     secondary:
       'bg-[#1a3c2e] text-[#f8f4ee] hover:bg-[#2d5a3d] active:bg-[#0f241c]',
     outline:

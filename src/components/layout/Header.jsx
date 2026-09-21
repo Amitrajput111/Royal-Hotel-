@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, Moon, Sun } from 'lucide-react';
 import { useStickyHeader } from '../../hooks/useStickyHeader';
 import { HOTEL } from '../../config/hotel';
 import Button from '../ui/Button';
@@ -17,6 +17,7 @@ const NAV_LINKS = [
 export default function Header() {
   const isSticky = useStickyHeader(80);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     const onResize = () => { if (window.innerWidth >= 1024) setMenuOpen(false); };
@@ -29,6 +30,14 @@ export default function Header() {
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
 
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark-theme');
+    } else {
+      document.documentElement.classList.remove('dark-theme');
+    }
+  }, [isDarkMode]);
+
   const scrollTo = (href) => {
     setMenuOpen(false);
     const el = document.querySelector(href);
@@ -40,32 +49,32 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isSticky
-            ? 'bg-[#0f241c]/97 backdrop-blur-md shadow-lg py-3'
-            : 'bg-transparent py-5'
+            ? 'bg-[#0f241c]/97 backdrop-blur-md shadow-lg py-4'
+            : 'bg-transparent py-6'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6 xl:gap-8">
 
-          {/* Logo */}
+          {/* Logo - Fixed leading and added a colorful gradient */}
           <a
             href="#home"
             onClick={(e) => { e.preventDefault(); scrollTo('#home'); }}
-            className="flex flex-col flex-shrink-0 gap-1 justify-center"
+            className="flex flex-col flex-shrink-0 gap-1 justify-center pb-1 group"
             aria-label="The Royal Hotel — Home"
           >
             <span
-              className="font-serif text-[#c9a84c] text-[12px] tracking-[0.3em] uppercase leading-none"
+              className="font-serif text-[#c9a84c] text-[12px] md:text-sm tracking-[0.3em] uppercase leading-tight"
               style={{ textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}
             >The</span>
             <span
-              className="font-serif text-white text-2xl md:text-3xl font-light tracking-[0.1em] hover:text-[#f8f4ee] transition-colors leading-none"
-              style={{ textShadow: '0 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.5)' }}
+              className="font-serif text-2xl md:text-3xl font-light tracking-[0.1em] transition-all duration-500 leading-tight bg-gradient-to-r from-white via-[#f8f4ee] to-[#c9a84c] bg-clip-text text-transparent group-hover:scale-105 origin-left"
+              style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.9))' }}
             >
               Royal Hotel
             </span>
           </a>
 
-          {/* Desktop nav — centered */}
+          {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8 flex-1 justify-center" aria-label="Main navigation">
             {NAV_LINKS.map(({ label, href }) => (
               <a
@@ -82,6 +91,15 @@ export default function Header() {
 
           {/* Desktop right CTAs */}
           <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
+            {/* Day/Night Toggle */}
+            <button
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              className="w-9 h-9 rounded-full border border-white/20 text-white/70 hover:bg-[#c9a84c] hover:text-[#0f241c] hover:border-[#c9a84c] transition-all flex items-center justify-center"
+              aria-label="Toggle Dark Mode"
+            >
+              {isDarkMode ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
+
             <a
               href={`tel:${HOTEL.phone}`}
               className="flex items-center gap-1.5 text-white/70 hover:text-[#c9a84c] transition-colors text-sm whitespace-nowrap"
@@ -94,15 +112,23 @@ export default function Header() {
             </Button>
           </div>
 
-          {/* Mobile hamburger */}
-          <button
-            className="lg:hidden w-10 h-10 flex items-center justify-center text-white hover:text-[#c9a84c] transition-colors flex-shrink-0"
-            onClick={() => setMenuOpen((v) => !v)}
-            aria-expanded={menuOpen}
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          >
-            {menuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          {/* Mobile right icons */}
+          <div className="lg:hidden flex items-center gap-3 flex-shrink-0">
+            <button
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              className="w-9 h-9 rounded-full border border-white/20 text-white/70 hover:bg-[#c9a84c] hover:text-[#0f241c] transition-all flex items-center justify-center"
+            >
+              {isDarkMode ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
+            <button
+              className="w-10 h-10 flex items-center justify-center text-white hover:text-[#c9a84c] transition-colors"
+              onClick={() => setMenuOpen((v) => !v)}
+              aria-expanded={menuOpen}
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            >
+              {menuOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
         </div>
       </header>
 
