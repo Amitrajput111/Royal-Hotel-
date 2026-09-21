@@ -30,7 +30,7 @@ export const HOTEL = {
 
   // ── Social ────────────────────────────────────────────────
   social: {
-    linkedin:  'https://www.linkedin.com/in/amit-singh-rajput',   
+    linkedin:  'https://www.linkedin.com/in/amitrajput111/',   
     instagram: 'https://instagram.com/',   
     facebook:  'https://facebook.com/',    
     twitter:   'https://x.com/',           
