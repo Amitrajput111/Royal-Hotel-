@@ -1,125 +1,29 @@
-# The Royal Hotel — Premium Hotel Website
+# The Royal Hotel
 
-A polished, fully responsive luxury hotel website demo built with React + Vite + Tailwind CSS.
+A highly professional, responsive, and visually stunning modern hotel website built with **React 19**, **Vite**, **Tailwind CSS v4**, and **Framer Motion**. Designed to offer a premium user experience, seamless animations, and structured content flow suitable for luxury hospitality.
 
----
+![The Royal Hotel](https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&q=85&fit=crop)
 
-## 🚀 Quick Start
+## Features
+- **Immersive Hero Section:** Full-screen landing with smooth reveal animations.
+- **Dynamic Booking Panel:** Integrated React Datepicker for seamless availability checking.
+- **Luxury Room Showcase:** High-quality image lightboxes and detail modals.
+- **Scroll Animations:** Intersection-observer-based reveal blocks for smooth content loading.
+- **Fully Responsive:** Pixel-perfect grid and flex layouts that adapt flawlessly from mobile to ultra-wide desktop.
+- **Enquiry Form:** Form validation handled via React Hook Form, with a WhatsApp fallback integration.
 
-```bash
-# Install dependencies (already done)
-npm install
+## Tech Stack
+- **Framework:** React 19 + Vite
+- **Styling:** Tailwind CSS v4
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **Forms:** React Hook Form
+- **Date Handling:** React Datepicker
 
-# Start development server
-npm run dev
-# → Open http://localhost:5173/
-
-# Production build
-npm run build
-npm run preview
-```
-
----
-
-## 📁 Project Structure
-
-```
-src/
-├── config/
-│   └── hotel.js          ← ⭐ All configurable hotel data (edit this first)
-├── components/
-│   ├── layout/
-│   │   ├── Header.jsx    ← Sticky nav with mobile menu
-│   │   └── Footer.jsx    ← Newsletter, social, links
-│   ├── sections/
-│   │   ├── Hero.jsx
-│   │   ├── BookingPanel.jsx
-│   │   ├── About.jsx
-│   │   ├── Rooms.jsx
-│   │   ├── Experiences.jsx
-│   │   ├── Dining.jsx
-│   │   ├── Gallery.jsx
-│   │   ├── Offers.jsx
-│   │   ├── Testimonials.jsx
-│   │   ├── Location.jsx
-│   │   └── FAQ.jsx
-│   └── ui/
-│       ├── Button.jsx
-│       ├── SectionHeading.jsx
-│       ├── RoomModal.jsx       ← Room detail modal
-│       └── LightboxModal.jsx   ← Gallery lightbox
-├── hooks/
-│   ├── useStickyHeader.js
-│   └── useScrollReveal.js
-└── pages/
-    └── Home.jsx
-```
+## Developer
+**Developed by Amit Singh Rajput**
+- **Email:** amitrajput@gmail.com
+- **LinkedIn:** [Amit Singh Rajput](https://www.linkedin.com/in/amit-singh-rajput)
 
 ---
-
-## ⚙️ Configuration (Before Going Live)
-
-Open `src/config/hotel.js` and update:
-
-| Field | Default | Description |
-|---|---|---|
-| `phone` | `+91 98765 43210` | Hotel phone number |
-| `email` | `reservations@theroyalhotel.com` | Reservations email |
-| `whatsappNumber` | `919876543210` | WhatsApp number (digits + country code, no spaces) |
-| `address` | New Delhi demo address | Full hotel address |
-| `mapEmbed` | Demo Google Maps URL | Replace with your actual Google Maps embed URL |
-| `social.*` | Placeholder URLs | Instagram, Facebook, X, YouTube URLs |
-
----
-
-## ✅ What's Built & Working
-
-| Feature | Status |
-|---|---|
-| Sticky transparent → solid header on scroll | ✅ |
-| Mobile hamburger menu with slide-in animation | ✅ |
-| Hero with entrance animation + dual CTA | ✅ |
-| Booking panel: date picker, guest/room counters, validation | ✅ |
-| Night count display | ✅ |
-| WhatsApp enquiry with URL-encoded booking details | ✅ |
-| About section with image + floating badge | ✅ |
-| 3 room cards with View Details modal | ✅ |
-| Room modal: amenities, specs, WhatsApp enquiry | ✅ |
-| 4 experience cards with hover reveal | ✅ |
-| Dining: 2 outlets + feature cards | ✅ |
-| Gallery: 10 images, category filters, lightbox | ✅ |
-| Keyboard navigation in lightbox (Arrow + Escape) | ✅ |
-| 3 offer cards with hover reveal | ✅ |
-| Testimonials carousel with dot pagination | ✅ |
-| Location: map embed + 4 info cards | ✅ |
-| Contact form with React Hook Form validation + success state | ✅ |
-| FAQ accordion (ARIA-compliant, animated) | ✅ |
-| Footer: newsletter with validation, social icons, nav | ✅ |
-| Scroll reveal animations on all sections | ✅ |
-| prefers-reduced-motion respected | ✅ |
-| Mobile responsive (320px+) | ✅ |
-
----
-
-## 📝 Demo Notices
-
-- **Booking panel**: Does not claim live availability. Sends a WhatsApp enquiry.
-- **Contact form**: Falls back to WhatsApp if no backend is configured. Shows a clear demo success message.
-- **Prices**: Labelled as "illustrative / sample" throughout.
-- **Testimonials**: Labelled as "sample/illustrative" — not verified reviews.
-- **Offers**: Labelled as "Sample Offer" — not guaranteed availability.
-- **Map**: Uses a demo New Delhi location — replace with actual hotel coordinates.
-- **WhatsApp number**: Replace before going live.
-
----
-
-## 🎨 Design Tokens
-
-| Token | Value |
-|---|---|
-| Forest Green | `#1a3c2e` |
-| Gold | `#c9a84c` |
-| Ivory | `#f8f4ee` |
-| Charcoal | `#2c2c2c` |
-| Heading font | Cormorant Garamond (serif) |
-| Body font | Inter (sans-serif) |
+*Built with precision and expertise to look good, feel good, and perform flawlessly.*
