@@ -22,7 +22,7 @@ A highly professional, responsive, and visually stunning modern hotel website bu
 
 ## Developer
 **Developed by Amit Singh Rajput**
-- **Email:** amitrajput@gmail.com
+- **Email:** amitrajput98267313@gmail.com
 - **LinkedIn:** [Amit Rajput](https://www.linkedin.com/in/amitrajput111/)
 
 ---

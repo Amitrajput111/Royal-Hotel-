@@ -41,21 +41,21 @@ const FAQS = [
 
 function FAQItem({ faq, isOpen, onToggle, index }) {
   return (
-    <div className="border border-[#ede7dc] rounded overflow-hidden">
+    <div className="border border-[#ede7dc] rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       <button
         onClick={onToggle}
-        className="w-full flex items-start justify-between gap-4 p-5 text-left bg-white hover:bg-[#f8f4ee] transition-colors"
+        className="w-full flex items-center justify-between gap-6 p-6 text-left bg-white hover:bg-[#f8f4ee] transition-colors"
         aria-expanded={isOpen}
         aria-controls={`faq-answer-${index}`}
         id={`faq-question-${index}`}
       >
-        <span className="font-serif text-[#1a3c2e] text-base leading-snug">{faq.q}</span>
+        <span className="font-serif text-[#1a3c2e] text-lg md:text-xl font-medium leading-relaxed">{faq.q}</span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}
-          className="flex-shrink-0 text-[#c9a84c] mt-0.5"
+          className="flex-shrink-0 text-[#c9a84c]"
         >
-          <ChevronDown size={20} />
+          <ChevronDown size={24} />
         </motion.div>
       </button>
 
@@ -71,7 +71,7 @@ function FAQItem({ faq, isOpen, onToggle, index }) {
             transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="overflow-hidden"
           >
-            <p className="font-sans text-sm text-[#4a4a4a] leading-relaxed p-5 pt-0 border-t border-[#ede7dc]">
+            <p className="font-sans text-base md:text-lg text-[#4a4a4a] leading-relaxed p-6 pt-0 border-t border-[#ede7dc]">
               {faq.a}
             </p>
           </motion.div>
@@ -87,7 +87,7 @@ export default function FAQ() {
   return (
     <section id="faq" className="w-full section-padding bg-white">
       <div className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-        <RevealBlock className="w-full text-center mb-14">
+        <RevealBlock className="w-full text-center mb-16">
           <SectionHeading
             center
             eyebrow="Common Questions"
@@ -96,7 +96,7 @@ export default function FAQ() {
           />
         </RevealBlock>
 
-        <div className="w-full flex flex-col gap-3">
+        <div className="w-full flex flex-col gap-5">
           {FAQS.map((faq, i) => (
             <RevealBlock key={i} delay={i * 40} className="w-full">
               <FAQItem

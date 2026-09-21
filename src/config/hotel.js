@@ -14,7 +14,7 @@ export const HOTEL = {
   // ── Contact ──────────────────────────────────────────────
   phone: '+91 91092 65673',
   phoneDisplay: '+91 91092 65673',
-  email: 'amitrajput@gmail.com',  
+  email: 'amitrajput98267313@gmail.com',  
   address: {
     line1: '1, Rajpath Marg',
     line2: 'New Delhi — 110001',
@@ -61,7 +61,7 @@ export const HOTEL = {
       occupancy: '2 Adults',
       bed: 'King-size Bed',
       view: 'City View',
-      price: 8500,
+      price: 1000,
       image:
         'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80&fit=crop',
       gallery: [
@@ -97,7 +97,7 @@ export const HOTEL = {
       occupancy: '2 Adults + 1 Child',
       bed: 'King-size Bed',
       view: 'Garden / Pool View',
-      price: 14500,
+      price: 2000,
       image:
         'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80&fit=crop',
       gallery: [
@@ -135,7 +135,7 @@ export const HOTEL = {
       occupancy: '2 Adults + 2 Children',
       bed: 'Four-poster King Bed',
       view: 'Panoramic Skyline View',
-      price: 38000,
+      price: 5000,
       image:
         'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80&fit=crop',
       gallery: [
