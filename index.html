@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The Royal Hotel — A luxury 5-star hotel in New Delhi offering world-class rooms, suites, dining, and spa experiences. Where timeless Indian hospitality meets contemporary luxury." />
+    <meta name="theme-color" content="#1a3c2e" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="The Royal Hotel — New Delhi" />
+    <meta property="og:description" content="A Royal Escape. An Unforgettable Stay. Experience timeless Indian luxury at The Royal Hotel." />
+    <meta property="og:type" content="website" />
+    <!-- Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <title>The Royal Hotel — New Delhi | Luxury 5-Star Experience</title>
+
+    <!--
+      ══════════════════════════════════════════════════════════
+      PERMANENT FIX — Kills stale Service Workers (Pixie etc.)
+      
+      Phase 1: Unregister every existing SW + clear ALL caches.
+      Phase 2: Register Hotel D's own SW which:
+               • Uses skipWaiting() → activates IMMEDIATELY
+               • Uses clients.claim() → takes over ALL open tabs
+               • Never serves cached/stale content from old projects
+      ══════════════════════════════════════════════════════════
+    -->
+    <script>
+      (function killStaleServiceWorkers() {
+        if (!('serviceWorker' in navigator)) return;
+
+        // ── PHASE 1: Nuclear clear — unregister every SW + wipe all caches ──
+        navigator.serviceWorker.getRegistrations().then(function (registrations) {
+          var unregisterAll = registrations.map(function (reg) {
+            console.log('[Hotel D] Unregistering stale SW:', reg.scope);
+            return reg.unregister();
+          });
+
+          // Clear ALL named caches (Pixie's cached files, any other project)
+          var clearCaches = window.caches
+            ? caches.keys().then(function (names) {
+                return Promise.all(names.map(function (n) {
+                  console.log('[Hotel D] Deleting cache:', n);
+                  return caches.delete(n);
+                }));
+              })
+            : Promise.resolve();
+
+          return Promise.all(unregisterAll.concat([clearCaches]));
+        }).then(function () {
+          // ── PHASE 2: Register Hotel D's OWN service worker ──
+          // This SW uses skipWaiting + clients.claim to IMMEDIATELY take control
+          // of every tab on localhost:5173, replacing any remnant of Pixie.
+          return navigator.serviceWorker.register('/sw.js', {
+            updateViaCache: 'none', // always fetch fresh sw.js, never cached version
+          });
+        }).then(function (reg) {
+          console.log('[Hotel D] SW registered, scope:', reg.scope);
+          // Force the new SW to activate immediately
+          if (reg.installing) reg.installing.postMessage({ type: 'SKIP_WAITING' });
+          if (reg.waiting)    reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+        }).catch(function (err) {
+          console.warn('[Hotel D] SW error (non-critical):', err);
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
